@@ -1,0 +1,10 @@
+.example-spacer {
+  flex: 2 2 auto;
+}
+.icon{
+  margin-right: 5px;
+}
+a{
+
+  text-decoration: none;
+}

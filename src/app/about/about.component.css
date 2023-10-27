@@ -1,0 +1,20 @@
+.home-feature {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.home-feature.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.left-text {
+  background: linear-gradient(to right, #1d2b64, #03a9f4);
+  border-radius: 10px; /* Adjust the border radius as needed */
+  padding: 20px; /* Add padding to give space around the text */
+}
+
+.left-text p {
+  color: white; /* Set the text color to contrast with the background */
+  margin: 0; /* Remove default margin to ensure padding is consistent */
+}

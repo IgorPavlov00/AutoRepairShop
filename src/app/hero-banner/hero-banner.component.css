@@ -1,0 +1,33 @@
+.hero-banner {
+  position: relative;
+  background-image: url('/assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px 0;
+  height: 87%;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) to control darkness */
+}
+
+.hero-banner h1 {
+  color: #fff;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-banner p {
+  color: #fff; /* Set the text color to white */
+  font-size: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+

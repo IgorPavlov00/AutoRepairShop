@@ -1,0 +1,27 @@
+
+.footer{
+  color:#fff;
+  background-color: #0d2857;
+}
+
+.list-style{
+  list-style-type:none!important;
+  cursor:pointer;
+  font-size:.75rem;
+  opacity:.8;
+}
+.copy-right{
+  font-size:.75rem;
+  opacity:.8;
+}
+
+.contact-section {
+  background: linear-gradient(to right, #1d2b64, #03a9f4);
+  border-radius: 10px;
+  padding: 20px;
+  color: white; /* Set text color to white for contrast */
+}
+
+.contact-section p {
+  margin: 0; /* Remove default margin to ensure padding is consistent */
+}
