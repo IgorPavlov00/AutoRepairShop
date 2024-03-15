@@ -31,6 +31,7 @@
               "src/assets/css/font-awesome.css",
               "src/assets/css/templatemo-softy-pinko.css",
               "src/assets/css/flex-slider.css",
+              "node_modules/ngx-toastr/toastr.css"
 
             ],
             "scripts": [
@@ -103,6 +104,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

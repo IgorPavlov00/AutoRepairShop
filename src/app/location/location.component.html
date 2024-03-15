@@ -1,63 +1,236 @@
-<section class="contact-section section-padding section-bg" id="location">
 
-  <!-- Add the custom shape divider -->
 
-  <div class="container">
+<main id="location">
 
-    <div class="row">
 
-      <div class="col-lg-12 col-12 text-center" style="margin-top: 40px;color: white">
-        <h2 class="mb-5"><strong>Kontakt i lokacija</strong></h2>
-        <hr style="background-color: white">
+
+
+
+
+  <section class="section-padding section-bg" >
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-12 col-12" >
+          <h3 class="mb-4 pb-2">Kontaktirajte nas vec danas!</h3>
+        </div>
+
+        <div class="col-lg-6 col-12">
+          <form action="#" method="post" class="custom-form contact-form" role="form" (ngSubmit)="submitForm()">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-12">
+                <div class="form-floating">
+                  <input type="text" name="name" [(ngModel)]="formData.name" id="name" class="form-control" placeholder="Ime" required="">
+
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-6 col-12">
+                <div class="form-floating">
+                  <input type="text" name="name" [(ngModel)]="formData.lastname" class="form-control" placeholder="Prezime" required="">
+
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-12">
+                <div class="form-floating">
+                  <input type="email" name="email" [(ngModel)]="formData.email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
+
+                </div>
+
+                <div class="form-floating">
+                  <textarea class="form-control"  [(ngModel)]="formData.message" name="message" placeholder="Sta treba da se popravi?"></textarea>
+
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-12 ms-auto">
+                <button type="submit" class="form-control" id="submitbutton" >Submit</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-5 col-12 mx-auto mt-5 mt-lg-0">
+          <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11236.324454811322!2d19.801025!3d45.2461525!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b11ff1fc3e0e1%3A0x1323802f45f16a0!2sAutolimarska%20Radionica%20Radoni%C4%87!5e0!3m2!1sen!2srs!4v1695111751031!5m2!1sen!2srs"
+                      width="350" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade" width="100%"
+                      style="border:0;border-radius: 15px;margin-left: 20px" allowfullscreen="" loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade" maptype="terrain"></iframe>
+
+
+        </div>
+
       </div>
-
-      <div class="col-lg-5 col-12 mb-4 mb-lg-0">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11236.324454811322!2d19.801025!3d45.2461525!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b11ff1fc3e0e1%3A0x1323802f45f16a0!2sAutolimarska%20Radionica%20Radoni%C4%87!5e0!3m2!1sen!2srs!4v1695111751031!5m2!1sen!2srs"
-          width="350" height="150" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" width="100%"
-          style="border:0;border-radius: 15px;margin-left: 20px" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" maptype="terrain"></iframe>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg- mb-md-0 ms-auto"
-           style="margin-left: 50px;margin-top: 50px;bottom:50px;color: white">
-        <h4 class="mb-3">Adresa</h4>
-
-        <p>Futoški put 91, Novi Sad 21000</p>
-
-
-
-        <p class="d-flex align-items-center mb-1" style="color: white">
-          <span class="me-2">Broj telefona: 063519635 </span>
-
-
-        </p>
-
-        <p class="d-flex align-items-center">
-          <span class="me-2">Email: info@gmail.com  </span>
-
-
-        </p>
-
-      </div>
-      <div class="col-lg-3 col-md-4 col-6">
-        <h4 class="site-footer-title mb-3" style="color:white;">Resursi</h4>
-
-        <ul class="site-footer-links" style="color: white">
-          <li><a (click)="scrollToHome()" style="cursor: pointer;" >Početna</a></li>
-          <li><a (click)="scrollToAbout()" style="cursor: pointer;">O nama</a></li>
-          <li><a (click)="scrollToServices()" style="cursor: pointer;">Usluge</a></li>
-
-
-        </ul>
-      </div>
-
     </div>
+  </section>
+</main>
 
+<footer class="new_footer_area bg_color">
+  <div class="new_footer_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+            <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
+            <p>Don’t miss any updates of our new templates and extensions.!</p>
+            <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+              <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+              <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+              <p class="mchimp-errmessage" style="display: none;"></p>
+              <p class="mchimp-sucmessage" style="display: none;"></p>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+            <h3 class="f-title f_600 t_color f_size_18">Download</h3>
+            <ul class="list-unstyled f_list">
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Android App</a></li>
+              <li><a href="#">ios App</a></li>
+              <li><a href="#">Desktop</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">My tasks</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+            <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+            <ul class="list-unstyled f_list">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Term &amp; conditions</a></li>
+              <li><a href="#">Reporting</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Support Policy</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer_bg">
+      <div class="footer_bg_one"></div>
+      <div class="footer_bg_two"></div>
+    </div>
   </div>
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-sm-7">
+          <p class="mb-0 f_400">© Auto Limarska Radionica Radonic</p>
+        </div>
+        <div class="col-lg-6 col-sm-5 text-right">
+          <p>Created <i class="icon_heart"></i> by<a href="http://cakecounter.com" target="_blank">Igor Pavlov</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- location.component.html -->
 
-</section>
+<!-- Your other HTML content -->
 
+<!--<header>-->
+<!--  &lt;!&ndash; Content &ndash;&gt;-->
+<!--</header>-->
+
+<!--<main>-->
+<!--  &lt;!&ndash; Content &ndash;&gt;-->
+<!--</main>-->
+
+<!--<footer class="footer">-->
+<!--  <div class="footer__addr">-->
+<!--    <h1 class="footer__logo">Something</h1>-->
+
+<!--    <h2>Contact</h2>-->
+
+<!--    <address>-->
+<!--      5534 Somewhere In. The World 22193-10212<br>-->
+
+<!--      <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>-->
+<!--    </address>-->
+<!--  </div>-->
+
+<!--  <ul class="footer__nav">-->
+<!--    <li class="nav__item">-->
+<!--      <h2 class="nav__title">Media</h2>-->
+
+<!--      <ul class="nav__ul">-->
+<!--        <li>-->
+<!--          <a href="#">Online</a>-->
+<!--        </li>-->
+
+<!--        <li>-->
+<!--          <a href="#">Print</a>-->
+<!--        </li>-->
+
+<!--        <li>-->
+<!--          <a href="#">Alternative Ads</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </li>-->
+
+<!--    <li class="nav__item nav__item&#45;&#45;extra">-->
+<!--      <h2 class="nav__title">Technology</h2>-->
+
+<!--      <ul class="nav__ul nav__ul&#45;&#45;extra">-->
+<!--        <li>-->
+<!--          <a href="#">Hardware Design</a>-->
+<!--        </li>-->
+
+<!--        <li>-->
+<!--          <a href="#">Software Design</a>-->
+<!--        </li>-->
+
+<!--        <li>-->
+<!--          <a href="#">Digital Signage</a>-->
+<!--        </li>-->
+
+<!--        <li>-->
+<!--          <a href="#">Automation</a>-->
+<!--        </li>-->
+
+<!--        <li>-->
+<!--          <a href="#">Artificial Intelligence</a>-->
+<!--        </li>-->
+
+<!--        <li>-->
+<!--          <a href="#">IoT</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </li>-->
+
+<!--    <li class="nav__item">-->
+<!--      <h2 class="nav__title">Legal</h2>-->
+
+<!--      <ul class="nav__ul">-->
+<!--        <li>-->
+<!--          <a href="#">Privacy Policy</a>-->
+<!--        </li>-->
+
+<!--        <li>-->
+<!--          <a href="#">Terms of Use</a>-->
+<!--        </li>-->
+
+<!--        <li>-->
+<!--          <a href="#">Sitemap</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </li>-->
+<!--  </ul>-->
+
+<!--  <div class="legal">-->
+<!--    <p>&copy; 2019 Something. All rights reserved.</p>-->
+
+<!--    <div class="legal__links">-->
+<!--      <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</footer>-->
 
 

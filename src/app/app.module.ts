@@ -19,6 +19,11 @@ import { ServicesComponent } from './services/services.component';
 import { FooterComponent } from './footer/footer.component';
 import { LocationComponent } from './location/location.component'
 import { ImagesComponent } from './images/images.component';
+import { ContactComponent } from './contact/contact.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {ToastrModule} from "ngx-toastr";
+
 
 
 
@@ -35,18 +40,22 @@ import { ImagesComponent } from './images/images.component';
     LocationComponent,
 
     ImagesComponent,
+     ContactComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSlideToggleModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+      BrowserAnimationsModule,
+        MatSlideToggleModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        FormsModule,
+      HttpClientModule,
+      ToastrModule.forRoot(), // Add this line
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
