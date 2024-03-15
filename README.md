@@ -4,7 +4,7 @@ This is a static website designed to serve as the digital storefront for an auto
 
 Technologies Used:
 
-Angular: Front-end framework for building dynamic web applications.
+● Angular: Front-end framework for building dynamic web applications.
 
 ![image](https://github.com/IgorPavlov00/AutoRepairShop/assets/103071674/937a8dda-928f-40c0-963e-4e58d372e3c3)
 
