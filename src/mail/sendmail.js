@@ -2,12 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-// const cors = require('cors');
-//
-// const app = express();
-
-
-
 
 
 const app = express();
@@ -34,14 +28,14 @@ const transporter = nodemailer.createTransport({
 
 // Route to handle form submissions
 app.post('/send-email', (req, res) => {
-  const { name, email, subject, message } = req.body;
+  const { name,lastname, email, subject, message } = req.body;
 
   // Email message setup
   const mailOptions = {
     from: 'your-email@gmail.com',
-    to: 'igorpavlov106@gmail.com',
+    to: 'aldonahzero123@gmail.com',
     subject: subject,
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    text: `Name: ${name}\nLast name: ${lastname}\nEmail: ${email}\nMessage: ${message}`
   };
 
   // Send email
