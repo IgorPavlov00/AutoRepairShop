@@ -18,7 +18,7 @@ Instructions:
 npm install
 ```
 
-```
+```javascript
 app.post('/send-email', (req, res) => {
   const { name, lastname, email, subject, message } = req.body;
 
