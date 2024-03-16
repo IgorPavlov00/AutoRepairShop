@@ -12,7 +12,7 @@ Technologies Used:
 
 ![image](https://github.com/IgorPavlov00/AutoRepairShop/assets/103071674/e9bc9aaa-997a-4065-9e99-e1fc8a1ca13b)
 
-Instructions:
+# Instructions:
 
 ```
 npm install
