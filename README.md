@@ -18,6 +18,8 @@ Technologies Used:
 npm install
 ```
 
+In the sendmail.js file, locate the to variable and replace it with your own email address. This allows you to receive emails sent from the application.
+
 ```javascript
 app.post('/send-email', (req, res) => {
   const { name, lastname, email, subject, message } = req.body;
