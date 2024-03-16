@@ -12,5 +12,20 @@ Technologies Used:
 
 ![image](https://github.com/IgorPavlov00/AutoRepairShop/assets/103071674/e9bc9aaa-997a-4065-9e99-e1fc8a1ca13b)
 
+Instructions:
 
+npm install
 
+app.post('/send-email', (req, res) => {
+  const { name, lastname, email, subject, message } = req.body;
+
+  // Email message setup
+  // Note: Users need to replace the 'to' field with their own email address
+  const mailOptions = {
+    from: 'your-email@gmail.com',
+    to: 'your-email@gmail.com', // <-- Replace with your own email address so u can see the email u would get
+    subject: 'Novi Posao', // You can customize the subject here
+    text: `Ime: ${name}\nPrezime: ${lastname}\nEmail: ${email}\nPoruka: ${message}`
+  };
+
+node sendmail.js
