@@ -14,8 +14,11 @@ Technologies Used:
 
 Instructions:
 
+```
 npm install
+```
 
+```
 app.post('/send-email', (req, res) => {
   const { name, lastname, email, subject, message } = req.body;
 
@@ -27,5 +30,8 @@ app.post('/send-email', (req, res) => {
     subject: 'Novi Posao', // You can customize the subject here
     text: `Ime: ${name}\nPrezime: ${lastname}\nEmail: ${email}\nPoruka: ${message}`
   };
+```
 
+```
 node sendmail.js
+```
