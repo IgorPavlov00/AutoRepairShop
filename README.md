@@ -34,6 +34,8 @@ app.post('/send-email', (req, res) => {
   };
 ```
 
+Run node server
+
 ```
 node sendmail.js
 ```
