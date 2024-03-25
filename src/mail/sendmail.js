@@ -35,8 +35,14 @@ app.post('/send-email', (req, res) => {
     from: 'your-email@gmail.com',
     to: 'aldonahzero123@gmail.com',
     subject: `Novi Posao`,
-    text: `Ime: ${name}\nPrezime: ${lastname}\nEmail: ${email}\nPoruka: ${message}`
+    html: `
+      <p><strong>Ime:</strong> ${name}</p>
+      <p><strong>Prezime:</strong> ${lastname}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Poruka:</strong> ${message}</p>
+    `
   };
+
 
   // Send email
   transporter.sendMail(mailOptions, (error, info) => {

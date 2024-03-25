@@ -39,7 +39,26 @@ export class LocationComponent {
   success(){
     this.toast.success('Email sent successfully', 'Success');
   }
+  send() {
+    const button = document.getElementById('submitbutton');
+    if (button) {
+      button.classList.add('loading'); // Add the "loading" class
+      button.innerText = 'Poslato'; // Change the text
+    }
+  }
+
+
   submitForm() {
+
+    if (!this.formData.name || !this.formData.lastname || !this.formData.email || !this.formData.message) {
+      this.toast.error("Niste popunili sva polja","Greska!")
+      return;
+    }
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(this.formData.email)) {
+      this.toast.error("Niste uneli dobar format email adrese","Greska!")
+      return;
+    }
     this.http.post('http://localhost:4242/send-email', this.formData)
       .subscribe(
         (response) => {
