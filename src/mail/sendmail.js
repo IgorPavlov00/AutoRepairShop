@@ -36,6 +36,7 @@ app.post('/send-email', (req, res) => {
     to: 'aldonahzero123@gmail.com',
     subject: `Novi Posao`,
     html: `
+      <h1>Nova Poruka</h1>
       <p><strong>Ime:</strong> ${name}</p>
       <p><strong>Prezime:</strong> ${lastname}</p>
       <p><strong>Email:</strong> ${email}</p>
