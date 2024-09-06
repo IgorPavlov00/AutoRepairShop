@@ -1,20 +1,24 @@
-.home-feature {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+h1.display-5 {
+  font-weight: bold;
+  font-size: 48px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.home-feature.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-.left-text {
-  background: linear-gradient(to right, #1d2b64, #03a9f4);
-  border-radius: 10px; /* Adjust the border radius as needed */
-  padding: 20px; /* Add padding to give space around the text */
+p.lead {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding-right: 15px;
 }
 
-.left-text p {
-  color: white; /* Set the text color to contrast with the background */
-  margin: 0; /* Remove default margin to ensure padding is consistent */
+.img-fluid {
+  border-radius: 10px;
+}
+
+.row.gx-3 {
+  gap: 15px; /* This will add a horizontal and vertical gap between the images */
 }

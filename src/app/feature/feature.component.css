@@ -1,3 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/Khand');
+
+*{
+  font-family: 'Khand', sans-serif;
+  font-size: 20px;
+  font-weight:bold;
+}
 .features {
   display: flex;
   justify-content: space-around;
@@ -21,7 +28,7 @@
 }
 
 .feature p {
-  font-size: 16px;
+  font-size: 25px;
 }
 .home-feature {
   opacity: 0;

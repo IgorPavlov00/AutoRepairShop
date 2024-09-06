@@ -60,6 +60,7 @@ export class LocationComponent {
       return;
     }
     //    use this if your server is running on localhost:'http://localhost:4242/send-email'
+    this.success();
     this.http.post('https://node-mail-7d17a90e16a4.herokuapp.com/send-email', this.formData)
       .subscribe(
         (response) => {
@@ -67,7 +68,7 @@ export class LocationComponent {
           // Handle success
 
 
-          this.success();
+          // this.success();
 
         },
         (error) => {
