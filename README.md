@@ -2,6 +2,7 @@
 
 This is a static website designed to serve as the digital storefront for an auto repair shop. With a sleek and user-friendly interface, this website aims to attract potential customers, showcase the shop's services, and provide essential information to visitors. Built using Angular, the website offers dynamic elements and smooth navigation while maintaining the simplicity and reliability required for a static site.
 
+#Live demo:https://main--autolimarija.netlify.app/
 Technologies Used:
 
 ● Angular: Front-end framework for building dynamic web applications.
