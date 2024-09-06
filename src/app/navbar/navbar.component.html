@@ -1,28 +1,18 @@
-<!-- <mat-toolbar color="primary" class="mat-elevation-z8">-->
-<!--<div class="icon">-->
-<!--   <mat-icon fontIcon="home"></mat-icon>-->
-<!--</div>-->
-<!--   <span>Anime Site</span>-->
-<!--<div class="example-spacer"></div>-->
-<!--   <a mat-button routerLink="home" >Home</a>-->
-<!--   <a mat-button routerLink="login">Login</a>-->
-<!--   <a mat-raised-button color="accent" routerLink="register">Sign Up</a>-->
-<!--  </mat-toolbar>-->
 <header class="header-area header-sticky">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <nav class="main-nav">
-          <div class="logo" style="font-size: 13px" >
-            <img src="assets/images/car-repair.png" width="46px" height="36px" alt="Softy Pinko" style="margin-right: 23px"/>Autolimarska Radionica Radonić
+          <div class="logo">
+            <img src="assets/images/car-repair.png" width="46px" height="36px" alt="Autolimarska Radionica Radonić" /> Autolimarska Radionica Radonić
           </div>
-          <ul class="nav">
-            <li><a (click)="scrollToHome()" style="cursor: pointer;" >Početna</a></li>
-            <li><a (click)="scrollToAbout()" style="cursor: pointer;">O nama</a></li>
-            <li><a (click)="scrollToServices()" style="cursor: pointer;">Usluge</a></li>
-            <li><a  (click)="scrollToLocation()" style="cursor: pointer;">Kontakt</a></li>
+          <ul class="nav" [class.menu-open]="isMenuOpen">
+            <li><a (click)="scrollToHome()">Početna</a></li>
+            <li><a (click)="scrollToAbout()">O nama</a></li>
+            <li><a (click)="scrollToServices()">Usluge</a></li>
+            <li><a (click)="scrollToLocation()">Kontakt</a></li> <!-- Added "Kontakt" here -->
           </ul>
-          <a class='menu-trigger'>
+          <a class="menu-trigger" (click)="toggleMenu()">
             <span>Menu</span>
           </a>
         </nav>
