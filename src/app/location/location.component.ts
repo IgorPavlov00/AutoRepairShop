@@ -59,7 +59,7 @@ export class LocationComponent {
       this.toast.error("Niste uneli dobar format email adrese","Greska!")
       return;
     }
-    this.http.post('http://localhost:4242/send-email', this.formData)
+    this.http.post('https://node-mail-7d17a90e16a4.herokuapp.com/send-email', this.formData)
       .subscribe(
         (response) => {
           console.log('Email sent successfully');
