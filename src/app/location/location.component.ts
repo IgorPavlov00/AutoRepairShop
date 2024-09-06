@@ -59,6 +59,7 @@ export class LocationComponent {
       this.toast.error("Niste uneli dobar format email adrese","Greska!")
       return;
     }
+    //    use this if your server is running on localhost:'http://localhost:4242/send-email'
     this.http.post('https://node-mail-7d17a90e16a4.herokuapp.com/send-email', this.formData)
       .subscribe(
         (response) => {
