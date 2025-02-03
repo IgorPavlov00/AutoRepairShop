@@ -1,20 +1,56 @@
-# Auto Repair Shop
+# 🚗 Auto Repair Shop  
 
-This is a static website designed to serve as the digital storefront for an auto repair shop. With a sleek and user-friendly interface, this website aims to attract potential customers, showcase the shop's services, and provide essential information to visitors. Built using Angular, the website offers dynamic elements and smooth navigation while maintaining the simplicity and reliability required for a static site. The angular frontend is deployed on Netlify and the node.js server for sending emails is deployed on Heroku. 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/.../deploy-status)](https://main--autolimarija.netlify.app/)  
+*A modern digital storefront for automotive services with seamless email integration.*
 
-Live application :https://main--autolimarija.netlify.app/
+---
 
+## 🌟 Features  
+- **🛠️ Service Showcase**: Highlight key repair services and specialties  
+- **📧 Contact Form**: Integrated email functionality using Node Mailer  
+- **📱 Responsive Design**: Mobile-friendly interface  
+- **📸 Visual Gallery**: Display shop facilities and work examples  
+- **📍 Location Information**: Easy-to-find contact details and business hours  
+- **💻 Hero Section**: Engaging landing page with clear call-to-action  
 
-Technologies Used:
+---
 
-● Angular: Front-end framework for building dynamic web applications.
+## 🛠️ Tech Stack  
+**Frontend**  
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white)  
+**Backend**  
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)  
+![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)  
+**Email Service**  
+![Nodemailer](https://img.shields.io/badge/Nodemailer-4B32C3?style=flat&logo=maildotru&logoColor=white)  
 
-● NodeJS: Backend framework supporting server-side logic and integrations, including Node Mailer for email functionalities.
+---
 
-![image](https://github.com/IgorPavlov00/AutoRepairShop/assets/103071674/937a8dda-928f-40c0-963e-4e58d372e3c3)
+## 🚀 Live Demo  
+Experience the live application: [https://main--autolimarija.netlify.app/](https://main--autolimarija.netlify.app/)  
 
-![image](https://github.com/IgorPavlov00/AutoRepairShop/assets/103071674/e9bc9aaa-997a-4065-9e99-e1fc8a1ca13b)
+---
 
+## 📸 Screenshots  
+| Homepage | Contact Section |  
+|----------|-----------------|  
+| ![Homepage](https://github.com/IgorPavlov00/AutoRepairShop/assets/103071674/937a8dda-928f-40c0-963e-4e58d372e3c3) | ![Contact](https://github.com/IgorPavlov00/AutoRepairShop/assets/103071674/e9bc9aaa-997a-4065-9e99-e1fc8a1ca13b) |  
+
+---
+
+## 🏁 Getting Started  
+
+### Prerequisites  
+- Node.js v16+  
+- Angular CLI  
+- NPM package manager  
+
+### Installation  
+1. Clone the repository:  
+   ```bash  
+   git clone https://github.com/IgorPavlov00/AutoRepairShop.git  
+   cd AutoRepairShop
+   
 # Instructions:
 
 ```
