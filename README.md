@@ -85,7 +85,7 @@ app.post('/send-email', (req, res) => {
     subject: 'Novi Posao',
     text: `Ime: ${name}\nPrezime: ${lastname}\nEmail: ${email}\nPoruka: ${message}`
   };
-
+```
 
 ```
 node sendmail.js
