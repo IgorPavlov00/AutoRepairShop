@@ -1,6 +1,5 @@
 # 🚗 Auto Repair Shop  
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/.../deploy-status)](https://main--autolimarija.netlify.app/)  
 *A modern digital storefront for automotive services with seamless email integration.*
 
 ---
