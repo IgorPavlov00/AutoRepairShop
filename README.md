@@ -86,7 +86,7 @@ app.post('/send-email', (req, res) => {
     text: `Ime: ${name}\nPrezime: ${lastname}\nEmail: ${email}\nPoruka: ${message}`
   };
 ```
-
+### 2. Start the server
 ```
 node sendmail.js
 ```
