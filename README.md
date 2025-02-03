@@ -56,21 +56,35 @@ Experience the live application: [https://main--autolimarija.netlify.app/](https
 npm install
 ```
 
-In the sendmail.js file, locate the to variable and replace it with your own email address. This allows you to receive emails sent from the application.
+## ✉️ Email Configuration
+
+### 1. Update Email Settings
+Navigate to `sendmail.js` and modify the email configuration:
 
 ```javascript
+// Import required modules
+const express = require('express');
+const nodemailer = require('nodemailer');
+
+// Configure email transporter
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'your-email@gmail.com',    // Replace with your email
+    pass: 'your-app-password'        // Use app-specific password
+  }
+});
+
+// Configure email options
 app.post('/send-email', (req, res) => {
   const { name, lastname, email, subject, message } = req.body;
 
-  // Email message setup
-  // Note: Users need to replace the 'to' field with their own email address
   const mailOptions = {
     from: 'your-email@gmail.com',
-    to: 'your-email@gmail.com', // <-- Replace with your own email address so u can see the email u would get
-    subject: 'Novi Posao', // You can customize the subject here
+    to: 'your-email@gmail.com',      // Recipient email
+    subject: 'Novi Posao',
     text: `Ime: ${name}\nPrezime: ${lastname}\nEmail: ${email}\nPoruka: ${message}`
   };
-```
 
 Run node server
 
