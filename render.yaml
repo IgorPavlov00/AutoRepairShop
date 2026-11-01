@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: autolimarija-radonic
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: node server/index.js
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 22.12.0
+      # Prompted for in the Render dashboard; never commit these values.
+      - key: MAIL_TO
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false

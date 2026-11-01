@@ -1,22 +1,21 @@
-<header class="header-area header-sticky">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <nav class="main-nav">
-          <div class="logo">
-            <img src="assets/images/car-repair.png" width="46px" height="36px" alt="Autolimarska Radionica Radonić" /> Autolimarska Radionica Radonić
-          </div>
-          <ul class="nav" [class.menu-open]="isMenuOpen">
-            <li><a (click)="scrollToHome()">Početna</a></li>
-            <li><a (click)="scrollToAbout()">O nama</a></li>
-            <li><a (click)="scrollToServices()">Usluge</a></li>
-            <li><a (click)="scrollToLocation()">Kontakt</a></li> <!-- Added "Kontakt" here -->
-          </ul>
-          <a class="menu-trigger" (click)="toggleMenu()">
-            <span>Menu</span>
-          </a>
-        </nav>
-      </div>
-    </div>
+<header class="nav" [class.nav--solid]="isScrolled || isMenuOpen">
+  <div class="container nav__bar">
+    <a class="brand" href="#pocetna" (click)="closeMenu()" aria-label="Radionica Radonić, početna">
+      <span class="brand__name">Radonić</span>
+      <span class="brand__sub">Autolimarska radionica</span>
+    </a>
+
+    <button class="nav__toggle" type="button" (click)="toggleMenu()"
+            [attr.aria-expanded]="isMenuOpen" aria-controls="main-menu"
+            [attr.aria-label]="isMenuOpen ? 'Zatvori meni' : 'Otvori meni'">
+      <span></span><span></span>
+    </button>
+
+    <nav id="main-menu" class="nav__menu" [class.is-open]="isMenuOpen" aria-label="Glavni meni">
+      <a href="#usluge" (click)="closeMenu()">Usluge</a>
+      <a href="#o-nama" (click)="closeMenu()">O nama</a>
+      <a href="#proces" (click)="closeMenu()">Kako funkcioniše</a>
+      <a class="nav__cta" href="#kontakt" (click)="closeMenu()">Kontakt</a>
+    </nav>
   </div>
 </header>

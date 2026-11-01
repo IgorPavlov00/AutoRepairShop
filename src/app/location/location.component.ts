@@ -1,91 +1,46 @@
 import { Component } from '@angular/core';
-import {ScrollService} from "../scroll.service";
-import {HttpClient} from "@angular/common/http";
-import {ToastrService} from "ngx-toastr";
+import { HttpClient } from '@angular/common/http';
+
+type Status = 'idle' | 'sending' | 'success' | 'error';
+
+const emptyForm = () => ({ name: '', lastname: '', email: '', message: '', website: '' });
 
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
-  styleUrls: ['./location.component.css']
+  styleUrls: ['./location.component.css'],
 })
 export class LocationComponent {
+  formData = emptyForm();
+  errors: Record<string, string> = {};
+  status: Status = 'idle';
 
-  formData = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    lastname: ''
-  };
-  constructor(private scrollService: ScrollService, private http: HttpClient,private toast:ToastrService) {
+  constructor(private http: HttpClient) {}
+
+  submitForm(): void {
+    if (this.status === 'sending' || !this.validate()) return;
+
+    this.status = 'sending';
+    this.http.post('send-email', this.formData).subscribe({
+      next: () => {
+        this.status = 'success';
+        this.formData = emptyForm();
+      },
+      // The visitor's text is kept so they can retry without retyping it.
+      error: () => (this.status = 'error'),
+    });
   }
 
-  scrollToServices(): void {
-    this.scrollService.scrollTo('services');
+  private validate(): boolean {
+    const { name, lastname, email, message } = this.formData;
+    this.errors = {};
+    this.status = 'idle';
+
+    if (!name.trim()) this.errors['name'] = 'Unesite ime.';
+    if (!lastname.trim()) this.errors['lastname'] = 'Unesite prezime.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) this.errors['email'] = 'Unesite ispravnu email adresu.';
+    if (!message.trim()) this.errors['message'] = 'Napišite šta treba da se popravi.';
+
+    return Object.keys(this.errors).length === 0;
   }
-
-  scrollToHome(): void {
-    this.scrollService.scrollTo('home');
-  }
-
-  scrollToAbout() {
-    this.scrollService.scrollTo('feature');
-  }
-
-  scrollToLocation() {
-    this.scrollService.scrollTo('location');
-  }
-
-  success(){
-    this.toast.success('Email sent successfully', 'Success');
-  }
-  send() {
-    const button = document.getElementById('submitbutton');
-    if (button) {
-      button.classList.add('loading'); // Add the "loading" class
-      button.innerText = 'Poslato'; // Change the text
-    }
-  }
-
-
-  submitForm() {
-
-    if (!this.formData.name || !this.formData.lastname || !this.formData.email || !this.formData.message) {
-      this.toast.error("Niste popunili sva polja","Greska!")
-      return;
-    }
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(this.formData.email)) {
-      this.toast.error("Niste uneli dobar format email adrese","Greska!")
-      return;
-    }
-    //    use this if your server is running on localhost:'http://localhost:4242/send-email'
-    this.success();
-    this.http.post('https://node-mail-7d17a90e16a4.herokuapp.com/send-email', this.formData)
-      .subscribe(
-        (response) => {
-          console.log('Email sent successfully');
-          // Handle success
-
-
-          // this.success();
-
-        },
-        (error) => {
-          console.error('Error sending email:', error);
-          // Handle error
-        }
-      );
-
-    this.clearForm();
-  }
-  clearForm() {
-    this.formData = {
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-      lastname: ''
-    };
-}
 }

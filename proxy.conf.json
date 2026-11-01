@@ -1,0 +1,3 @@
+{
+  "/send-email": { "target": "http://localhost:4242", "secure": false }
+}

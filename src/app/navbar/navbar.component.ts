@@ -1,38 +1,25 @@
-import { Component } from '@angular/core';
-import { ScrollService } from "../scroll.service";
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
+  isMenuOpen = false;
+  isScrolled = false;
 
-  isMenuOpen = false;  // To control menu visibility on smaller screens
-
-  constructor(private scrollService: ScrollService) {}
-
-  scrollToHome(): void {
-    this.scrollService.scrollTo('home');
-    this.isMenuOpen = false;  // Close menu after clicking
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.isScrolled = window.scrollY > 24;
   }
 
-  scrollToAbout(): void {
-    this.scrollService.scrollTo('feature');
-    this.isMenuOpen = false;
-  }
-
-  scrollToServices(): void {
-    this.scrollService.scrollTo('services');
-    this.isMenuOpen = false;
-  }
-
-  scrollToLocation(): void {
-    this.scrollService.scrollTo('location');
+  @HostListener('document:keydown.escape')
+  closeMenu(): void {
     this.isMenuOpen = false;
   }
 
   toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;  // Toggle the menu visibility
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

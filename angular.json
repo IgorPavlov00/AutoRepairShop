@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AnimeProject": {
+    "AutoRepairShop": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/anime-project",
+            "outputPath": "dist/auto-repair-shop",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -21,27 +21,13 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              "src/favicon.svg",
               "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss",
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/css/bootstrap.min.css",
-              "src/assets/css/font-awesome.css",
-              "src/assets/css/templatemo-softy-pinko.css",
-              "src/assets/css/flex-slider.css",
-              "node_modules/ngx-toastr/toastr.css"
-
+              "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/js/bootstrap.min.js",
-              "src/assets/js/custom.js",
-              "src/assets/js/popper.js",
-              "src/assets/js/bootstrap.min.js",
-              "src/assets/js/templatemo.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -74,18 +60,21 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "AnimeProject:build:production"
+              "browserTarget": "AutoRepairShop:build:production"
             },
             "development": {
-              "browserTarget": "AnimeProject:build:development"
+              "browserTarget": "AutoRepairShop:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AnimeProject:build"
+            "browserTarget": "AutoRepairShop:build"
           }
         },
         "test": {
@@ -97,7 +86,7 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/favicon.ico",
+              "src/favicon.svg",
               "src/assets"
             ],
             "styles": [
