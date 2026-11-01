@@ -1,92 +1,64 @@
-# 🚗 Auto Repair Shop  
+# Autolimarska radionica Radonić
 
-*A modern digital storefront for automotive services with seamless email integration.*
+Website for an auto body repair shop in Novi Sad: services, how the process works, location, and a contact form that emails enquiries to the shop. The site is in Serbian.
 
----
+## Screenshots
 
-## 🌟 Features  
-- **🛠️ Service Showcase**: Highlight key repair services and specialties  
-- **📧 Contact Form**: Integrated email functionality using Node Mailer  
-- **📱 Responsive Design**: Mobile-friendly interface  
-- **📸 Visual Gallery**: Display shop facilities and work examples  
-- **📍 Location Information**: Easy-to-find contact details and business hours  
-- **💻 Hero Section**: Engaging landing page with clear call-to-action  
+![Homepage](docs/screenshots/home.png)
 
----
+| Services | About |
+|----------|-------|
+| ![Services](docs/screenshots/usluge.png) | ![About](docs/screenshots/o-nama.png) |
 
-## 🛠️ Tech Stack  
-**Frontend**  
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white)  
-**Backend**  
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)  
-![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)  
-**Email Service**  
-![Nodemailer](https://img.shields.io/badge/Nodemailer-4B32C3?style=flat&logo=maildotru&logoColor=white)  
+| How it works | Contact |
+|--------------|---------|
+| ![How it works](docs/screenshots/proces.png) | ![Contact form and map](docs/screenshots/kontakt.png) |
 
----
+<p align="center"><img src="docs/screenshots/mobile.png" alt="Mobile view" width="300"></p>
 
-## 🚀 Live Demo  
-Experience the live application: [https://main--autolimarija.netlify.app/](https://main--autolimarija.netlify.app/)  
+## Tech stack
 
----
+- **Frontend:** Angular 15
+- **Server:** Node.js and Express (`server/index.js`) serve the built site and handle the contact form
+- **Email:** Resend HTTP API, or SMTP through Nodemailer
 
-## 📸 Screenshots  
-| Homepage | Contact Section |  
-|----------|-----------------|  
-| ![Homepage](https://github.com/IgorPavlov00/AutoRepairShop/assets/103071674/937a8dda-928f-40c0-963e-4e58d372e3c3) | ![Contact](https://github.com/IgorPavlov00/AutoRepairShop/assets/103071674/e9bc9aaa-997a-4065-9e99-e1fc8a1ca13b) |  
+## Getting started
 
----
+Requires Node.js 18 or newer.
 
-## 🏁 Getting Started  
-
-### Prerequisites  
-- Node.js v16+  
-- Angular CLI  
-- NPM package manager  
-
-### Installation  
-1. Clone the repository:  
-   ```bash  
-   git clone https://github.com/IgorPavlov00/AutoRepairShop.git  
-   cd AutoRepairShop
-   
-# Instructions:
-
-```
+```bash
+git clone https://github.com/IgorPavlov00/AutoRepairShop.git
+cd AutoRepairShop
 npm install
 ```
 
-## ✉️ Email Configuration
+For development, run the API and the Angular dev server in two terminals. `proxy.conf.json` is there to forward API calls to the server on port 4242.
 
-### 1. Update Email Settings
-Navigate to `sendmail.js` and modify the email configuration:
-
-```javascript
-// Import required modules
-const express = require('express');
-const nodemailer = require('nodemailer');
-
-// Configure email transporter
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'your-email@gmail.com',    // Replace with your email
-    pass: 'your-app-password'        // Use app-specific password
-  }
-});
-
-// Configure email options
-app.post('/send-email', (req, res) => {
-  const { name, lastname, email, subject, message } = req.body;
-
-  const mailOptions = {
-    from: 'your-email@gmail.com',
-    to: 'your-email@gmail.com',      // Recipient email
-    subject: 'Novi Posao',
-    text: `Ime: ${name}\nPrezime: ${lastname}\nEmail: ${email}\nPoruka: ${message}`
-  };
+```bash
+npm run serve   # Express on http://localhost:4242
+npm start       # Angular on http://localhost:4200
 ```
-### 2. Start the server
+
+To run the production build locally:
+
+```bash
+npm run build
+npm run serve
 ```
-node sendmail.js
-```
+
+## Email configuration
+
+The contact form reads its settings from environment variables, listed in `.env.example`. Never commit real values.
+
+| Variable | Purpose |
+|----------|---------|
+| `MAIL_TO` | Address that receives contact form messages (required) |
+| `RESEND_API_KEY` | Resend API key, the recommended option |
+| `MAIL_FROM` | Sender address (optional) |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | SMTP alternative to Resend |
+
+Without a verified domain, Resend only delivers to your own Resend account's address. If email isn't configured, the site still runs but the form returns a 503 error.
+
+## Deployment
+
+`render.yaml` defines a Render Blueprint: a free Node web service in Frankfurt with a `/healthz` health check. Create the Blueprint from this repository, then enter `MAIL_TO` and `RESEND_API_KEY` when prompted. Render's free plan blocks outbound SMTP, so use Resend there.
